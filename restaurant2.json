@@ -1,0 +1,110 @@
+[
+    {
+       "restaurantName":"A La Table des Lys",
+       "address":"58 rue Saint Simon, 42000 Saint-Étienne",
+       "lat":45.4549827,
+       "long":4.3688035,
+       "ratings":[
+          {
+             "stars":5,
+             "comment":"Joli cadre mais sans âme et pas très chaleureux (nous étions dans une des petites salles). Accueil sympathique mais le service n’a pas du tout été efficace."
+          },
+          {
+             "stars":3,
+             "comment":"L'étoile n'est pas pour demain"
+          },
+          {
+            "stars":5,
+            "comment":"Tout était parfait, des amuse-bouché en entrée jusqu’au dessert tout était délicieux."
+         } 
+       ]
+    },
+    {
+       "restaurantName":"Rom’Antica",
+       "address":"14 Avenue Denfert Rochereau, 42000 Saint-Étienne",
+       "lat":45.440973,
+       "long":4.39839,
+       "ratings":[
+          {
+             "stars":5,
+             "comment":"Le best!!!!! Service cadre plat tout est à la hauteur... Le prix du menu pour un 3 plats moins de 30€ un soir ! Avec Nappe et serviette en tissu . Rien à redire, si ! Merci pour le digestif offert par la maison pour terminer le repas"
+          },
+          {
+             "stars":5,
+             "comment":"Oublier un peu le cours des choses le temps d un repas divin, servi dans la bonne humeur...que demander de plus ? on y va, on y revient...Et on adore!"
+          }
+       ]
+    },
+    {
+      "restaurantName":"Insens",
+      "address":"10 rue de Lodi, 42000 Saint-Étienne",
+      "lat":45.440834,
+      "long":4.38859,
+      "ratings":[
+         {
+            "stars":4,
+            "comment":"Nous étions 5 et nous avons pu tester presque tous les plats des 2 menus... seul le veau accompagné de polenta n'était pas terrible... Par contre le service est un peu long..."
+         },
+         {
+            "stars":5,
+            "comment":"Très bon restaurant que nous recommandons les yeux fermés. Tout fut parfait que ce soit l'accueil, la présentation des plats et leurs qualités gustatives.Un régal! Merci nous reviendrons."
+         },
+         {
+            "stars":1,
+            "comment":"En visite à Saint Étienne, je suis allé dans ce restaurant bien noté sur trip advisor. Ils m'ont refusé l'entrée car ils ne servent plus à partir de 13h. Il était 13h40. Tous les autres restaurants sont ouverts mais pas eux..."
+         },
+         {
+            "stars":1,
+            "comment":"Je me suis fait virée du restaurant parce que j'étais toute seule à déjeuner. Pourtant j'ai cherché sur le net un bon restaurant sur Saint Etienne...."
+         },
+         {
+            "stars":3,
+            "comment":"J'avais beaucoup apprécié de dîner dans ce restaurant l'automne dernier et je me faisais une joie de renouveler cette belle expérience : une cuisine gastronomique goûteuse à un prix raisonnable. Hélas j'ai été plutôt déçue. Les plats sont très bien présentés mais plutôt fades"
+         },
+         {
+            "stars":4,
+            "comment":"Excellente cuisine avec un service sympathique. Un bémol sur les prix des vins qui me paraissent un peu excessif. Ambiance un peu bruyante Au global une belle soirée"
+         }
+      ]
+   },
+   {
+      "restaurantName":"La Loco",
+      "address":"29 Avenue Denfert Rochereau, 42000 Saint-Étienne",
+      "lat":45.4422466,
+      "long":4.398582,
+      "ratings":[
+         {
+            "stars":5,
+            "comment":"Très bon accueil. Cuisine raffinée, du fait maison. Très bon rapport qualité- prix. Nous reviendrons."
+         },
+         {
+            "stars":4,
+            "comment":"Le menu était excellent Personnel sympathique Le seul petit point négatif...l'attente entre les plats."
+         },
+         {
+            "stars":5,
+            "comment":"très bon accueil, personnel à l' écoute service impeccable même à l'heure tardive de notre arrivée, que cela fait du bien de sentir une équipe avenante et sympathique.Merci à eux et bon chemin à tous"
+         }
+      ]
+   },
+   {
+      "restaurantName":"Chez les Fondus",
+      "address":"4, rue Sainte Catherine, 42000 Saint-Étienne",
+      "lat":45.4371108,
+      "long":4.3872379,
+      "ratings":[
+         {
+            "stars":4,
+            "comment":"un grand choix de plats réconfortants, une équipe de serveurs bienveillante et un patron agréable et réactif"
+         },
+         {
+            "stars":5,
+            "comment":"De passage à Montbrison fin août un samedi soir l'établissement sur lequel je comptais était complet en ce soir de 29 août alors passant devant chez Les fondus j'ai demandé si pour le soir c'étais possible et oui."
+         },
+         {
+            "stars":3,
+            "comment":"Fondue réputée, bonne carte, très complète. En revanche,le tarif est un peu élevé pour la qualité de la charcuterie, rien de surprenant.( 24 euros en moyenne, la fondue) Pommes de terres, salade verte , petit pot de sarrasson, très peu assaisonné."
+         }
+      ]
+   }
+ ]
