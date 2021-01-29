@@ -4,9 +4,11 @@ class GoogleMap {
         /**
          * Initialiser la popup (la variable google.map est disponible car on est dans la fonction initMap)
          */
-        this.googleMapPopup = new GoogleMapPopup(google)
+        this.googleMapPopup = new GoogleMapPopup(google, this)
         this.initMap();
         this.addRestaurantEvent(addRestaurantCallback);
+        this.markers = [];
+        this.popups = [];
     }
 
 
@@ -16,12 +18,12 @@ class GoogleMap {
             center: { lat: 45.4240885, lng: 4.2962536 },
         });
     
-        this.map.addListener('click', function(e){
-            if(popups.length){
-                for(let i = 0; i < popups.length; i++){
-                    popups[i].containerDiv.style.visibility = 'hidden';
+        this.map.addListener('click', (e) => {
+            if(this.popups.length){
+                for(let i = 0; i < this.popups.length; i++){
+                    this.popups[i].containerDiv.style.visibility = 'hidden';
                 }
-                popups = []
+                this.popups = []
                 return;
             }
                         
@@ -57,10 +59,10 @@ class GoogleMap {
     }
 
     createMarkers(data){
-        for(let i = 0; i < markers.length; i++){
+        for(let i = 0; i < this.markers.length; i++){
             markers[i].setMap(null)
         }
-        markers = []
+        this.markers = []
         for (let i = 0; i < data.length; i++) {
             const marker = new google.maps.Marker({
                 position: { lat: data[i].lat, lng: data[i].long },
@@ -72,7 +74,12 @@ class GoogleMap {
                 this.googleMapPopup.drawPopup(e.latLng, data[i], this.map)
             })
 
-            markers.push(marker)
+            this.markers.push(marker)
         }
+    }
+
+    // Initialisation de la variable this.popups qu'on appellera depuis googleMapPopup
+    setPopups(popups) {
+        this.popups = popups
     }
 }

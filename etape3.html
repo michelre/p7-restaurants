@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Find my restaurant</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery.star-rating-svg.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  
+  <div class="container">
+    <h1 id="title">Manger à Saint-Étienne</h1>
+  </div>
+  
+  
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <form id="filter-form">
+            <select name="min" class="form-control" id="min">
+              <option class="" value="0">Choisir la note minimum</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <select name="max" class="form-control" id="max">
+              <option value="5">Choisir la note maximum</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <button type="submit" class="btn btn-primary filter-button">Filtrer</button>
+          </form>
+
+          <div class="">
+            <div id="list-restaurant"></div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div id="map"></div>
+        </div>
+        <div class="follow-steps">
+          <div class="col-md-4">
+            <h2>Comparer les restaurants</h2>
+            <h5>1. Choisir une note minimum</h5>
+            <h5>2. Choisir une note maximum</h5>
+            <h5>3. Filtrer !</h5>
+          </div>
+          <div class="col-md-4">
+            <h2>Ajouter un commentaire</h2>
+            <h5>1. Cliquer sur "Ajouter un commentaire"</h5>
+            <h5>2. Choisir une note</h5>
+            <h5>3. Rédiger un commentaire</h5>
+            <h5>4. Ajouter !</h5>
+          </div>
+          <div class="col-md-4">
+            <h2>Ajouter un restaurant</h2>
+            <h5>1. Cliquer sur la carte à l'adresse du nouveau restaurant</h5>
+            <h5>2. Entrer le nom du restaurant</h5>
+            <h5>3. Ajouter !</h5>
+          </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <div class="modal fade" id="addRestaurantModal" tabindex="-1" aria-labelledby="addRestaurantModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <form class="modal-content" id="modal-add">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addRestaurantModalLabel">Ajouter un restaurant</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+            <div >
+              <input  type="hidden" name="lat" class="form-control" value="">
+            </div>
+            <div >
+              <input  type="hidden" name="lng" class="form-control" value="">
+            </div>
+            <div class="form-group">
+              <label>Adresse:</label>
+              <input  type="text" name="address" class="form-control" value="" readonly>
+            </div>
+            <div class="form-group">
+              <label>Nom:</label>
+              <input  type="text" name="name" class="form-control" value="" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Ajouter</button>  
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>        
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+        
+        
+      
+
+    
+  <script src="js/jquery.min.js"></script>
+  
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRYb-tgWCilA96VP361QmNDgQqv5Y2asI&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="js/utils.js"></script>  
+    <script src="jquery.star-rating-svg.js"></script>
+    <script src="js/google-map.js"></script> 
+    <script src="js/restaurant-list.js"></script>  
+    <script src="js/filter.js"></script>  
+    <script src="js/google-map-popup.js"></script> 
+  <script src="js/etape3.js"></script>
+  
+</body>
+</html>

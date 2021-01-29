@@ -1,4 +1,7 @@
-function GoogleMapPopup(google){
+// Pas de possibilité de créer une classe dans une classe. Donc utilisation d'une fonction comme une classe
+function GoogleMapPopup(google, googleMap){
+
+    this.popups = [];
 
 
     class Popup extends google.maps.OverlayView {
@@ -71,14 +74,14 @@ function GoogleMapPopup(google){
             popupContent
         );
         popup.setMap(map);
-        popups.push(popup)
-
+        this.popups.push(popup)
+        googleMap.setPopups(this.popups)
         setTimeout(function(){
             $(".my-rating-" + Utils.stringToSlug(restaurant.restaurantName)).starRating({
                 starSize: 25,
                 initialRating: Utils.moyenne(restaurant.ratings),
                 readOnly: true
             });
-        }, 1000);
+        }, 500);
     }
 }
