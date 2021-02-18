@@ -68,6 +68,7 @@ createList(){
 }
 
 
+// Modal de lecture des commentaires
 createCommentModal(restaurant){
     const listComments = `<ul>${restaurant.ratings.map(rating => `<li>${rating.comment}</li>`).join('')}</ul>`
     const divModal = document.createElement('div')
@@ -93,6 +94,7 @@ createCommentModal(restaurant){
   return divModal;
 }
 
+// Modal de création d'un nouveau commentaire
 createAddCommentModal(restaurant){
 
     const divAddCommentModal = document.createElement('div')

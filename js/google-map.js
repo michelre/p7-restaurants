@@ -1,9 +1,10 @@
 class GoogleMap {
 
-    constructor(addRestaurantCallback){
+    constructor(addRestaurantCallback, coords){        
         /**
          * Initialiser la popup (la variable google.map est disponible car on est dans la fonction initMap)
          */
+        this.coords = coords;
         this.googleMapPopup = new GoogleMapPopup(google, this)
         this.initMap();
         this.addRestaurantEvent(addRestaurantCallback);
@@ -13,11 +14,13 @@ class GoogleMap {
 
 
     initMap(){
+        
         this.map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 12,
-            center: { lat: 45.4240885, lng: 4.2962536 },
+            zoom: 14,
+            center: this.coords,
         });
     
+        // Au click sur la carte, on affiche la modal qui permet d'ajouter un nouveau restaurant
         this.map.addListener('click', (e) => {
             if(this.popups.length){
                 for(let i = 0; i < this.popups.length; i++){
@@ -40,6 +43,9 @@ class GoogleMap {
                 console.log(results, status)
             })
         })
+        
+        
+    
     }
 
     addRestaurantEvent(addRestaurantCallback){
@@ -52,6 +58,7 @@ class GoogleMap {
             const lat = parseFloat(event.target.lat.value)
             const long = parseFloat(event.target.lng.value)
             $('#addRestaurantModal').modal('hide')
+            // Permet d'appel la fonction définit dans etape3.js afin que celle-ci ajoute le restaurant dans le tableau allRestaurants
             addRestaurantCallback({
                 restaurantName, address, lat, long, ratings: []
             })
@@ -60,7 +67,7 @@ class GoogleMap {
 
     createMarkers(data){
         for(let i = 0; i < this.markers.length; i++){
-            markers[i].setMap(null)
+            this.markers[i].setMap(null)
         }
         this.markers = []
         for (let i = 0; i < data.length; i++) {

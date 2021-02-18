@@ -13,7 +13,7 @@
   transform: translate(-50%, -100%);
   /* Style the bubble. */
   background-color: white;
-  padding: 5px;
+  padding: 10px;
   border-radius: 5px;
   font-family: sans-serif;
   overflow-y: auto;  
@@ -36,7 +36,7 @@
   top: 0;
   left: 0;
   /* Center the tip horizontally. */
-  transform: translate(-50%, 0);
+ /* transform: translate(-50%, 0); */
   /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
   width: 0;
   height: 0;
@@ -116,10 +116,41 @@ li{
 }
 
 .follow-steps{
-  margin-top: 40px;
+  margin: 30px 0;
+  display: inherit;
 }
 
 ul {
   padding: 0;
   list-style: none;
+}
+
+.popup-title {
+  font-size : 1.5em;
+}
+
+.popup-rating {
+  font-size: 1em;
+  color:#048B9A;
+}
+
+#commentModalLabel{
+  margin-top:0;
+  color:#ffd700;
+}
+
+.modal-body ul li{
+  margin-bottom: 25px;
+}
+
+.modal-header{
+  background-color:#048B9A;
+}
+
+.step-title{
+  color:#ffd700;
+}
+
+.steps{
+  color:#fff;
 }

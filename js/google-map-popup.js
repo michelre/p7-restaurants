@@ -60,11 +60,11 @@ function GoogleMapPopup(google, googleMap){
         const popupContent=document.createElement("div")
         popupContent.innerHTML= `
             <div>
-                <h2>${restaurant.restaurantName}</h2>
-                <h3> Note moyenne : 
+                <h2 class="popup-title">${restaurant.restaurantName}</h2>
+                <h3 class="popup-rating"> Note moyenne : 
                     <div class="my-rating-${Utils.stringToSlug(restaurant.restaurantName)}"></div>
                 </h3>
-                <img style="height: 100px;" src="https://maps.googleapis.com/maps/api/streetview?size=400x400&location=${restaurant.lat},${restaurant.long}&fov=80&heading=70&pitch=0&key=AIzaSyBDUNetyL3ydc7HBVvK2DFIhNZ1veToQ50"/>
+                <img style="height: 100px;" src="https://maps.googleapis.com/maps/api/streetview?size=800x400&location=${restaurant.lat},${restaurant.long}&fov=80&heading=70&pitch=0&key=AIzaSyBDUNetyL3ydc7HBVvK2DFIhNZ1veToQ50"/>
                 
             </div>
         `
