@@ -10,16 +10,14 @@ class PlacesService {
         .then((restaurants) => {
             const promisesReviews = [];
             for(let i = 0; i < restaurants.length; i++){
-                // POur chaque restaurant, on va récupérer ses avis sous forme de promesse
+                // Pour chaque restaurant, on va récupérer ses avis sous forme de promesse
                 const reviews = this.getReviewsByRestaurant(restaurants[i])
                 promisesReviews.push(reviews)                
-            }
-            
+            }            
             // On attend que tous les avis soient résolus pour associer les avis aux restaurants
             return Promise.all(promisesReviews).then(reviews => ({ restaurants, reviews }))
         })
         .then(function(data) {
-            // On constitue des objets "restaurant" formattés comme dans le fichier restaurant2.json
             for(let i = 0; i < data.restaurants.length; i++){
                 const ratings = [];                
                 for(let j = 0; j < data.reviews[i].length; j++){
@@ -38,7 +36,7 @@ class PlacesService {
     }
 
     /**
-     * Fonction qui permet de récupérer le listing des restaurants
+     * On récupère le listing des restaurants
      */
     getRestaurants(){
         return new Promise((resolve) => {
@@ -71,7 +69,7 @@ class PlacesService {
     }
 
     /**
-     * Fonction qui permet de récupérer tous les avis d'un restaurant
+     * On récupère tous les avis d'un restaurant
      * 
      */
     getReviewsByRestaurant(restaurant) {

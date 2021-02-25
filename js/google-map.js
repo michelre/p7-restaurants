@@ -2,7 +2,7 @@ class GoogleMap {
 
     constructor(addRestaurantCallback, coords){        
         /**
-         * Initialiser la popup (la variable google.map est disponible car on est dans la fonction initMap)
+         * Initialisation de la popup
          */
         this.coords = coords;
         this.googleMapPopup = new GoogleMapPopup(google, this)
@@ -37,15 +37,9 @@ class GoogleMap {
                     $('#addRestaurantModal input[name="lat"]').val(e.latLng.lat())
                     $('#addRestaurantModal input[name="lng"]').val(e.latLng.lng())
                     $('#addRestaurantModal input[name="address"]').val(results[0].formatted_address)
-                } else {
-                    //TODO: Déclencher le cas d'erreur
                 }
-                console.log(results, status)
             })
         })
-        
-        
-    
     }
 
     addRestaurantEvent(addRestaurantCallback){
@@ -53,12 +47,11 @@ class GoogleMap {
         formAddRestaurant.addEventListener('submit', function(event) {
             event.preventDefault();
 
-            const restaurantName = event.target.name.value // Récupérer la valeur du champs input qui porte l'attribut name="name" . event.target = form HTML
+            const restaurantName = event.target.name.value
             const address = event.target.address.value
             const lat = parseFloat(event.target.lat.value)
             const long = parseFloat(event.target.lng.value)
             $('#addRestaurantModal').modal('hide')
-            // Permet d'appel la fonction définit dans etape3.js afin que celle-ci ajoute le restaurant dans le tableau allRestaurants
             addRestaurantCallback({
                 restaurantName, address, lat, long, ratings: []
             })
@@ -76,8 +69,7 @@ class GoogleMap {
                 map: this.map,
             });
 
-            marker.addListener('click', (e) => { 
-                //Fonction flechée car si fonction normale le contexte "this" aurait été surchargé et la variable this.googleMapPopup n'aurait pas été trouvée dans ce nouveau contexte               
+            marker.addListener('click', (e) => {            
                 this.googleMapPopup.drawPopup(e.latLng, data[i], this.map)
             })
 

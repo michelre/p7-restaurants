@@ -3,19 +3,19 @@ let allRestaurants = [];
 function initMap() {
 
     /**
-     * Init du composant de filtre
+     * Initialisation du composant de filtre
      */
     const filter = new Filter(displayFilteredRestaurants);
 
     /**
-     * Init du composant de listing de restaurant
+     * Initialisation du composant de listing de restaurant
      */
     const restaurantList = new RestaurantList([], addCommentCallback);
 
     /**
-     * Init du composant Map
+     * Initialisation du composant Map
      */
-    const googleMap = new GoogleMap(addRestaurantCallback);
+    const googleMap = new GoogleMap(addRestaurantCallback, { lat: 45.4387236, lng: 4.3851787 });
     
 
     $.ajax(
@@ -34,7 +34,7 @@ function initMap() {
         const comment = e.target.comment.value
         const rating = {
             stars: parseInt(mark),
-            comment // Equivalent à comment: comment car variable du meme nom que la clé de mon objet
+            comment
         }
         for(let j = 0; j < allRestaurants.length; j++){
             if(allRestaurants[j].restaurantName === restaurant.restaurantName){
@@ -54,7 +54,7 @@ function initMap() {
     }
     
     function displayFilteredRestaurants(){
-        
+        // On centralise la logique de filtrage des restaurants pour mettre à jour à la fois la liste et la carte
         const restaurantFiltered = []
         for(let i = 0; i < allRestaurants.length; i++){
             const avg = Utils.moyenne(allRestaurants[i].ratings)
