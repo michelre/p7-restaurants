@@ -6,7 +6,7 @@ function GoogleMapPopup(google, googleMap){
 
     class Popup extends google.maps.OverlayView {
         constructor(position, content) {
-            super();            
+            super();
             this.position = position;
             content.classList.add("popup-bubble");
             // This zero-height div is positioned at the bottom of the bubble.
@@ -19,13 +19,12 @@ function GoogleMapPopup(google, googleMap){
             this.containerDiv.appendChild(bubbleAnchor);
             // Optionally stop clicks, etc., from bubbling up to the map.
             Popup.preventMapHitsAndGesturesFrom(this.containerDiv);
-            console.log(this.position);
         }
         // Called when the popup is added to the map.
         onAdd() {
             this.getPanes().floatPane.appendChild(this.containerDiv);
         }
-        // Called when the popup is removed from the map. 
+        // Called when the popup is removed from the map.
         onRemove() {
             if (this.containerDiv.parentElement) {
                 this.containerDiv.parentElement.removeChild(this.containerDiv);
@@ -41,12 +40,12 @@ function GoogleMapPopup(google, googleMap){
                 Math.abs(divPosition.x) < 4000 && Math.abs(divPosition.y) < 4000
                     ? "block"
                     : "none";
-    
+
             if (display === "block") {
                 this.containerDiv.style.left = divPosition.x + "px";
                 this.containerDiv.style.top = divPosition.y + "px";
             }
-    
+
             if (this.containerDiv.style.display !== display) {
                 this.containerDiv.style.display = display;
             }
